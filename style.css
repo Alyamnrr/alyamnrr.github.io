@@ -117,3 +117,24 @@ body {
         scroll-behavior: auto !important;
     }
 }
+
+/* ---------- 8. PHOTO BLEND & FLORAL ACCENTS ---------- */
+.photo-blend {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 84%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 84%, rgba(0, 0, 0, 0) 100%);
+}
+
+.floral-petal {
+    filter: drop-shadow(0 2px 8px rgba(188, 46, 74, 0.25));
+    animation: petalSway 5s ease-in-out infinite alternate;
+}
+
+@keyframes petalSway {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-6px) rotate(6deg);
+    }
+}
+

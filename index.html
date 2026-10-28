@@ -70,9 +70,9 @@
 
                 <!-- Logo / Brand (Selfie Avatar & Nama Panggilan Alya) -->
                 <a href="#hero" class="flex items-center gap-3 group">
-                    <img src="assets/images/profile.jpg" 
-                         onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800'"
-                         alt="Foto Alya" 
+                    <img src="assets/images/selfie.jpg" 
+                         onerror="this.src='assets/images/profile.jpg'"
+                         alt="Foto Selfie Alya" 
                          class="w-10 h-10 rounded-xl object-cover border-2 border-maroon-700/60 shadow-md group-hover:scale-105 transition-transform duration-300">
                     <div class="flex flex-col">
                         <span class="font-serif font-bold text-base sm:text-lg text-maroon-900 dark:text-cream-100 tracking-wide leading-tight">
@@ -145,16 +145,16 @@
                         <span>Terbuka untuk Magang & Peluang Karir (Open to Work)</span>
                     </div>
 
-                    <!-- Greeting & Name (Alya & Nurul Muta'Alya) -->
+                    <!-- Greeting & Name -->
                     <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight text-slate-900 dark:text-cream-50 mb-2">
-                        Halo, Aku <br class="hidden sm:inline">
+                        Hai, nama aku <br class="hidden sm:inline">
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-maroon-800 via-maroon-600 to-rose-600 dark:from-maroon-300 dark:via-cream-100 dark:to-rose-300">
-                            Alya
+                            Nurul Muta'Alya
                         </span> ✨
                     </h1>
-                    <span class="text-sm sm:text-base font-serif font-medium text-slate-500 dark:text-cream-300/80 mb-4 block">
-                        (Nurul Muta'Alya)
-                    </span>
+                    <p class="text-base sm:text-lg font-serif italic text-maroon-700 dark:text-rose-300 font-medium mb-4 flex items-center gap-1.5 justify-center lg:justify-start">
+                        <span>(Bisa dipanggil Alya 🌸)</span>
+                    </p>
 
                     <!-- Typing Subtitle -->
                     <div class="text-lg sm:text-2xl font-medium text-maroon-800 dark:text-maroon-300 mb-6 min-h-[36px] flex items-center">
@@ -198,20 +198,71 @@
                 <!-- Right Column: Profile Picture & Floating Highlights -->
                 <div class="lg:col-span-5 flex flex-col items-center justify-center">
                     <div class="relative group">
-                        <!-- Glow Backdrop -->
-                        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-maroon-700 via-rose-500 to-amber-500 opacity-30 blur-2xl group-hover:opacity-60 transition duration-500"></div>
+                        <!-- Ambient Glow Backdrop -->
+                        <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-maroon-700/30 via-rose-400/30 to-amber-300/20 opacity-40 blur-2xl group-hover:opacity-70 transition duration-700"></div>
 
-                        <!-- Photo Frame -->
-                        <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden glass-card p-2 border-2 border-maroon-300/60 dark:border-maroon-800 shadow-2xl flex items-center justify-center">
-                            <img id="profileImg" 
-                                 src="assets/images/profile.jpg" 
-                                 onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800'"
-                                 alt="Foto Nurul Muta'Alya" 
-                                 class="w-full h-full object-cover rounded-2xl transition duration-500 group-hover:scale-105">
+                        <!-- Delicate Floral Botanical Accent (Top-Right) -->
+                        <div class="absolute -top-7 -right-7 w-28 h-28 pointer-events-none z-20 opacity-85 transition-transform duration-500 group-hover:scale-110">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-sm">
+                                <!-- Curved Stem -->
+                                <path d="M15,92 Q42,58 68,34 T92,12" stroke="#9e223a" stroke-width="1.8" stroke-linecap="round" fill="none" class="dark:stroke-rose-400" />
+                                <path d="M48,52 Q58,38 64,28" stroke="#bc2e4a" stroke-width="1.4" stroke-linecap="round" fill="none" class="dark:stroke-rose-400" />
+                                <!-- Soft Leaves -->
+                                <path d="M40,60 Q48,50 38,45 Q42,56 40,60 Z" fill="#fbe6e9" stroke="#9e223a" stroke-width="1" class="dark:fill-maroon-900 dark:stroke-rose-300" />
+                                <path d="M58,40 Q70,38 65,28 Q60,36 58,40 Z" fill="#fbe6e9" stroke="#9e223a" stroke-width="1" class="dark:fill-maroon-900 dark:stroke-rose-300" />
+                                <!-- Blossom Flower -->
+                                <g transform="translate(70, 28)">
+                                    <circle cx="0" cy="0" r="4.5" fill="#ceaa89" />
+                                    <path d="M0,0 Q-8,-12 0,-15 Q8,-12 0,0 Z" fill="#fdf2f4" stroke="#d34b65" stroke-width="1.2" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <path d="M0,0 Q12,-8 15,0 Q12,8 0,0 Z" fill="#fdf2f4" stroke="#d34b65" stroke-width="1.2" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <path d="M0,0 Q8,12 0,15 Q-8,12 0,0 Z" fill="#fdf2f4" stroke="#d34b65" stroke-width="1.2" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <path d="M0,0 Q-12,8 -15,0 Q-12,-8 0,0 Z" fill="#fdf2f4" stroke="#d34b65" stroke-width="1.2" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <circle cx="0" cy="0" r="2.2" fill="#832034" class="dark:fill-amber-300" />
+                                </g>
+                                <!-- Sweet Blossom Bud -->
+                                <g transform="translate(88, 14)">
+                                    <circle cx="0" cy="0" r="3" fill="#f0aab6" stroke="#9e223a" stroke-width="1" class="dark:stroke-rose-400" />
+                                    <path d="M0,-2 Q3,-7 5,-5 Q4,0 0,3 Z" fill="#fdf2f4" stroke="#9e223a" stroke-width="0.8" class="dark:stroke-rose-400" />
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Delicate Floral Botanical Accent (Bottom-Left) -->
+                        <div class="absolute -bottom-6 -left-6 w-24 h-24 pointer-events-none z-20 opacity-80 transition-transform duration-500 group-hover:scale-105">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-sm">
+                                <path d="M85,12 Q62,42 36,68 T12,88" stroke="#9e223a" stroke-width="1.6" stroke-linecap="round" fill="none" class="dark:stroke-rose-400" />
+                                <path d="M58,40 Q44,44 48,54 Q56,48 58,40 Z" fill="#fbe6e9" stroke="#9e223a" stroke-width="1" class="dark:fill-maroon-900 dark:stroke-rose-300" />
+                                <path d="M40,60 Q30,66 36,74 Q42,66 40,60 Z" fill="#fbe6e9" stroke="#9e223a" stroke-width="1" class="dark:fill-maroon-900 dark:stroke-rose-300" />
+                                <g transform="translate(34, 66)">
+                                    <circle cx="0" cy="0" r="3.2" fill="#ceaa89" />
+                                    <circle cx="-4" cy="-2" r="3" fill="#fdf2f4" stroke="#d34b65" stroke-width="0.9" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <circle cx="2" cy="-5" r="3" fill="#fdf2f4" stroke="#d34b65" stroke-width="0.9" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <circle cx="5" cy="1" r="3" fill="#fdf2f4" stroke="#d34b65" stroke-width="0.9" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <circle cx="0" cy="4" r="3" fill="#fdf2f4" stroke="#d34b65" stroke-width="0.9" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <circle cx="-4" cy="3" r="3" fill="#fdf2f4" stroke="#d34b65" stroke-width="0.9" class="dark:fill-rose-950 dark:stroke-rose-400" />
+                                    <circle cx="0" cy="0" r="1.5" fill="#832034" class="dark:fill-amber-300" />
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Floating Petal Accent -->
+                        <div class="absolute -top-3 left-4 text-sm pointer-events-none floral-petal z-20">
+                            🌸
+                        </div>
+
+                        <!-- Seamless Photo Frame (Arch Silhouette & Bottom Blend) -->
+                        <div class="relative w-64 h-84 sm:w-72 sm:h-96 rounded-t-[140px] rounded-b-[44px] overflow-hidden p-2 border border-rose-300/40 dark:border-maroon-800/40 bg-gradient-to-b from-rose-100/40 via-cream-50/20 to-transparent dark:from-maroon-900/30 dark:via-maroon-950/20 dark:to-transparent shadow-xl backdrop-blur-sm flex items-center justify-center">
+                            <div class="w-full h-full rounded-t-[130px] rounded-b-[36px] overflow-hidden photo-blend">
+                                <img id="profileImg" 
+                                     src="assets/images/profile.jpg" 
+                                     onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800'"
+                                     alt="Foto Nurul Muta'Alya" 
+                                     class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                            </div>
                         </div>
 
                         <!-- Floating Badge 1: Passion -->
-                        <div class="absolute -top-4 -left-4 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200 dark:border-maroon-800 flex items-center gap-2 animate-float">
+                        <div class="absolute -top-3 -left-4 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200/70 dark:border-maroon-800/70 flex items-center gap-2 animate-float z-30">
                             <span class="text-xl">🤖</span>
                             <div class="flex flex-col">
                                 <span class="text-[10px] text-slate-400 uppercase font-semibold leading-none">Passion</span>
@@ -220,7 +271,7 @@
                         </div>
 
                         <!-- Floating Badge 2: Campus (with Telkom University Logo) -->
-                        <div class="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200 dark:border-maroon-800 flex items-center gap-2.5 animate-float-delayed">
+                        <div class="absolute -bottom-3 -right-3 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200/70 dark:border-maroon-800/70 flex items-center gap-2.5 animate-float-delayed z-30">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_Telkom_University_potrait.png/120px-Logo_Telkom_University_potrait.png" 
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" 
                                  alt="Logo Telkom University" 
