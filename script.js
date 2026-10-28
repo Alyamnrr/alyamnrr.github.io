@@ -33,41 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ---------- 2. PROFILE IMAGE STORAGE & UPLOAD ----------
-    const imageUpload = document.getElementById('imageUpload');
-    const profileImg = document.getElementById('profileImg');
-
-    // Load saved image from localStorage if available
-    const savedImg = localStorage.getItem('alya_profile_img');
-    if (savedImg && profileImg) {
-        profileImg.src = savedImg;
-    }
-
-    if (imageUpload && profileImg) {
-        imageUpload.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                // Max size check: 5MB
-                if (file.size > 5 * 1024 * 1024) {
-                    showToast('Ukuran foto maksimal 5MB ya! ⚠️');
-                    return;
-                }
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const dataUrl = event.target.result;
-                    profileImg.src = dataUrl;
-                    try {
-                        localStorage.setItem('alya_profile_img', dataUrl);
-                        showToast('Foto profil berhasil diperbarui! ✨');
-                    } catch (err) {
-                        // In case localStorage quota exceeded
-                        showToast('Foto ditampilkan! (Ukuran terlalu besar untuk disimpan permanen)');
-                    }
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    }
+    // ---------- 2. PROFILE IMAGE ----------
+    // Clear any test storage to prioritize real assets/images/profile.jpg
+    try {
+        localStorage.removeItem('alya_profile_img');
+    } catch (e) {}
 
 
     // ---------- 3. TYPING EFFECT ----------
@@ -145,27 +115,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ---------- 6. CONTACT FORM VIA WHATSAPP ----------
+    // ---------- 6. CONTACT FORM VIA EMAIL (FormSubmit API + Mailto Fallback) ----------
     const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const name = document.getElementById('formName')?.value.trim() || 'Pengunjung';
+            const name = document.getElementById('formName')?.value.trim() || '';
             const email = document.getElementById('formEmail')?.value.trim() || '';
-            const subject = document.getElementById('formSubject')?.value.trim() || 'Peluang Proyek / Kolaborasi';
+            const subject = document.getElementById('formSubject')?.value.trim() || 'Pesan dari Portofolio Web';
             const message = document.getElementById('formMessage')?.value.trim() || '';
 
-            // Format message for WhatsApp
-            const waText = encodeURIComponent(
-                `Halo Alya! 👋\n\nNama: ${name}\nEmail: ${email}\nSubjek: ${subject}\n\nPesan:\n${message}`
-            );
+            const btnText = submitBtn ? submitBtn.querySelector('span') : null;
+            if (btnText) btnText.textContent = 'Sedang Mengirim...';
 
-            showToast('Membuka WhatsApp untuk mengirim pesan... ✨');
-            setTimeout(() => {
-                window.open(`https://wa.me/6285727610186?text=${waText}`, '_blank');
-            }, 700);
+            showToast('Mengirim pesan ke email Alya... ✉️');
 
-            contactForm.reset();
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/mutaalya1108@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        _subject: `[Portofolio Web] ${subject}`,
+                        message: message
+                    })
+                });
+
+                if (response.ok) {
+                    showToast('Pesan berhasil terkirim ke mutaalya1108@gmail.com! ✨');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Gagal mengirim via FormSubmit API');
+                }
+            } catch (err) {
+                // Fallback: langsung buka aplikasi email pengguna
+                const mailtoUrl = `mailto:mutaalya1108@gmail.com?subject=${encodeURIComponent(`[Portofolio] ${subject}`)}&body=${encodeURIComponent(`Halo Alya,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
+                window.location.href = mailtoUrl;
+                showToast('Membuka aplikasi email untuk mengirim pesan ke Alya... ✉️');
+                contactForm.reset();
+            } finally {
+                if (btnText) btnText.textContent = 'Kirim Pesan ke Email Alya';
+            }
         });
     }
 

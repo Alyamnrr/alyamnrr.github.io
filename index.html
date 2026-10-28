@@ -204,12 +204,6 @@
                                  onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800'"
                                  alt="Foto Nurul Muta'Alya" 
                                  class="w-full h-full object-cover rounded-2xl transition duration-500 group-hover:scale-105">
-
-                            <!-- Upload Photo Button -->
-                            <label for="imageUpload" class="absolute bottom-3 right-3 bg-maroon-900/90 text-cream-50 p-3 rounded-full shadow-lg cursor-pointer hover:bg-maroon-700 hover:scale-110 transition-all" title="Ganti foto profil Anda">
-                                <i class="fa-solid fa-camera text-sm"></i>
-                                <input type="file" id="imageUpload" accept="image/*" class="hidden">
-                            </label>
                         </div>
 
                         <!-- Floating Badge 1: Passion -->
@@ -221,18 +215,19 @@
                             </div>
                         </div>
 
-                        <!-- Floating Badge 2: Campus -->
-                        <div class="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200 dark:border-maroon-800 flex items-center gap-2 animate-float-delayed">
-                            <span class="text-xl">🎓</span>
+                        <!-- Floating Badge 2: Campus (with Telkom University Logo) -->
+                        <div class="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200 dark:border-maroon-800 flex items-center gap-2.5 animate-float-delayed">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_Telkom_University_potrait.png/120px-Logo_Telkom_University_potrait.png" 
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" 
+                                 alt="Logo Telkom University" 
+                                 class="w-6 h-6 object-contain">
+                            <span class="text-xl hidden">🎓</span>
                             <div class="flex flex-col">
                                 <span class="text-[10px] text-slate-400 uppercase font-semibold leading-none">Campus</span>
                                 <span class="text-xs font-bold text-maroon-900 dark:text-cream-100">Telkom Univ Purwokerto</span>
                             </div>
                         </div>
                     </div>
-                    <span class="text-[11px] text-slate-400 dark:text-slate-500 mt-6 italic text-center">
-                        Klik ikon kamera di sudut foto untuk memilih foto langsung dari perangkat Anda.
-                    </span>
                 </div>
 
             </div>
@@ -282,8 +277,13 @@
                         </div>
                         <div>
                             <span class="block text-[11px] text-slate-400 uppercase tracking-wider">Universitas</span>
-                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1 mt-0.5">
-                                <i class="fa-solid fa-graduation-cap text-maroon-700 dark:text-maroon-400 text-xs"></i> Telkom Univ Purwokerto
+                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1.5 mt-0.5">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_Telkom_University_potrait.png/120px-Logo_Telkom_University_potrait.png" 
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" 
+                                     alt="Logo Telkom" 
+                                     class="w-4 h-4 object-contain inline-block">
+                                <i class="fa-solid fa-graduation-cap text-maroon-700 dark:text-maroon-400 text-xs hidden"></i>
+                                Telkom Univ Purwokerto
                             </span>
                         </div>
                         <div>
@@ -924,7 +924,7 @@
                         Kirim Pesan Langsung
                     </h3>
                     <p class="text-xs text-slate-500 mb-6">
-                        Pesan akan otomatis dialihkan ke kontak WhatsApp saya agar kita bisa langsung berdiskusi dengan cepat.
+                        Pesan akan otomatis terkirim langsung ke kotak masuk email saya di <span class="font-semibold text-maroon-800 dark:text-maroon-300">mutaalya1108@gmail.com</span>.
                     </p>
 
                     <form id="contactForm" class="space-y-4">
@@ -949,11 +949,20 @@
                             <textarea id="formMessage" rows="4" required placeholder="Halo Alya, saya tertarik mendiskusikan peluang..." class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-maroon-950/70 border border-maroon-200 dark:border-maroon-900 focus:outline-none focus:ring-2 focus:ring-maroon-800 text-xs sm:text-sm resize-none"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-maroon-900 to-maroon-700 text-cream-50 font-semibold text-xs sm:text-sm shadow-md hover:shadow-maroon-900/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
-                            <span>Kirim ke WhatsApp Alya</span>
-                            <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                        <button type="submit" id="submitBtn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-maroon-900 to-maroon-700 text-cream-50 font-semibold text-xs sm:text-sm shadow-md hover:shadow-maroon-900/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                            <span>Kirim Pesan ke Email Alya</span>
+                            <i class="fa-solid fa-paper-plane text-cream-50 text-sm"></i>
                         </button>
                     </form>
+
+                    <div class="mt-4 pt-3 border-t border-maroon-100/60 dark:border-maroon-900/40 text-center">
+                        <span class="text-xs text-slate-500">
+                            Atau lebih nyaman lewat WhatsApp? 
+                            <a href="https://wa.me/6285727610186" target="_blank" rel="noopener noreferrer" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Chat WhatsApp Saya &rarr;
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
