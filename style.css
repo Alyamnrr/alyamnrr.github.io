@@ -1,0 +1,119 @@
+/* ========================================================
+   PORTOFOLIO : NURUL MUTA'ALYA (ALYA)
+   Sweet & Elegant Tech Portfolio (Maroon & Cream Edition)
+   ======================================================== */
+
+/* ---------- 1. BASE STYLING ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+/* ---------- 2. GLASSMORPHISM & CARDS ---------- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.dark .glass-card {
+    background: rgba(26, 17, 21, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(131, 32, 52, 0.28);
+}
+
+.glass-nav {
+    background: rgba(253, 251, 247, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(222, 198, 171, 0.35);
+}
+
+.dark .glass-nav {
+    background: rgba(18, 11, 14, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(131, 32, 52, 0.3);
+}
+
+/* ---------- 3. GLOW EFFECTS & SHADOWS ---------- */
+.glow-maroon {
+    box-shadow: 0 10px 30px -5px rgba(131, 32, 52, 0.25);
+}
+
+.dark .glow-maroon {
+    box-shadow: 0 10px 30px -5px rgba(228, 120, 140, 0.22);
+}
+
+.glow-soft {
+    box-shadow: 0 4px 20px -2px rgba(131, 32, 52, 0.12);
+}
+
+/* ---------- 4. FLOATING ANIMATION ---------- */
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-float {
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: floatSlow 4s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+/* ---------- 5. CUSTOM SCROLLBAR ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #faf6f0;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #140d10;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #832034;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9e223a;
+}
+
+/* ---------- 6. TEXT SELECTION ---------- */
+::selection {
+    background-color: #832034;
+    color: #ffffff;
+}
+
+/* ---------- 7. ACCESSIBILITY ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

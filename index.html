@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurul Muta'Alya | AI Engineer & Data Science Enthusiast</title>
+    <meta name="description" content="Portofolio Nurul Muta'Alya (Alya), Mahasiswi Teknik Informatika di Telkom University Purwokerto, AI Engineer & Data Science Enthusiast.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            50: '#fdf2f4',
+                            100: '#fbe6e9',
+                            200: '#f7d0d6',
+                            300: '#f0aab6',
+                            400: '#e4788c',
+                            500: '#d34b65',
+                            600: '#bc2e4a',
+                            700: '#9e223a',
+                            800: '#832034',
+                            900: '#701e30',
+                            950: '#3e0c17',
+                        },
+                        cream: {
+                            50: '#fdfbf7',
+                            100: '#faf6f0',
+                            200: '#f4ece1',
+                            300: '#ebdcc9',
+                            400: '#dec6ab',
+                            500: '#ceaa89',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-cream-50 text-slate-800 dark:bg-[#120b0e] dark:text-cream-100 transition-colors duration-300 selection:bg-maroon-800 selection:text-white">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 w-full z-40 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3">
+            <div class="glass-nav rounded-2xl px-5 py-3.5 flex items-center justify-between shadow-sm">
+
+                <!-- Logo / Brand -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-maroon-900 to-maroon-600 text-cream-50 font-serif text-lg font-bold flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                        A
+                    </span>
+                    <div class="flex flex-col">
+                        <span class="font-serif font-bold text-base sm:text-lg text-maroon-900 dark:text-cream-100 tracking-wide leading-tight">
+                            Nurul Muta'Alya
+                        </span>
+                        <span class="text-[10px] tracking-widest text-maroon-600 dark:text-maroon-300 font-semibold uppercase">
+                            AI & Data Science
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="#tentang" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Tentang</a>
+                    <a href="#skills" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Skills</a>
+                    <a href="#proyek" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Proyek</a>
+                    <a href="#pengalaman" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Pengalaman</a>
+                    <a href="#prestasi" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Prestasi</a>
+                    <a href="#kontak" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Actions: Theme Toggle & CTA -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button id="themeToggle" aria-label="Toggle Theme" class="w-10 h-10 rounded-xl bg-cream-200/70 dark:bg-maroon-950/70 border border-maroon-200/60 dark:border-maroon-800 text-maroon-900 dark:text-cream-100 flex items-center justify-center hover:scale-105 transition-all">
+                        <i class="fa-solid fa-moon text-base dark:hidden"></i>
+                        <i class="fa-solid fa-sun text-base hidden dark:block text-amber-300"></i>
+                    </button>
+
+                    <a href="https://wa.me/6285727610186" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-maroon-800 hover:bg-maroon-900 text-cream-50 font-medium text-xs sm:text-sm shadow-md hover:shadow-maroon-800/30 transition-all">
+                        <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i>
+                        <span>Chat Alya</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden w-10 h-10 rounded-xl bg-cream-200/60 dark:bg-maroon-950/60 border border-maroon-200/50 dark:border-maroon-900 flex items-center justify-center text-maroon-900 dark:text-cream-100">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-2 glass-nav rounded-2xl p-5 flex flex-col gap-3 shadow-lg border border-maroon-100 dark:border-maroon-900">
+                <a href="#tentang" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Tentang Alya</a>
+                <a href="#skills" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Skills & Keahlian</a>
+                <a href="#proyek" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Portofolio Proyek</a>
+                <a href="#pengalaman" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Pengalaman & Organisasi</a>
+                <a href="#prestasi" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Prestasi & Sertifikasi</a>
+                <a href="#kontak" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Kontak Saya</a>
+                <a href="https://wa.me/6285727610186" target="_blank" rel="noopener noreferrer" class="py-2 text-sm font-semibold text-maroon-800 dark:text-maroon-300 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-500"></i> Hubungi via WhatsApp &rarr;
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-20 left-10 w-80 h-80 bg-maroon-300/25 dark:bg-maroon-900/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-cream-300/40 dark:bg-maroon-950/40 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left Column: Intro & Badges -->
+                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-maroon-100 dark:bg-maroon-950/90 border border-maroon-200 dark:border-maroon-800 text-maroon-800 dark:text-maroon-300 text-xs font-semibold tracking-wide mb-6">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Terbuka untuk Magang & Peluang Karir (Open to Work)</span>
+                    </div>
+
+                    <!-- Greeting & Name -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight text-slate-900 dark:text-cream-50 mb-4">
+                        Halo, Aku <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-maroon-800 via-maroon-600 to-rose-600 dark:from-maroon-300 dark:via-cream-100 dark:to-rose-300">
+                            Nurul Muta'Alya
+                        </span> ✨
+                    </h1>
+
+                    <!-- Typing Subtitle -->
+                    <div class="text-lg sm:text-2xl font-medium text-maroon-800 dark:text-maroon-300 mb-6 min-h-[36px] flex items-center">
+                        <span id="typingText" class="font-serif italic font-semibold"></span>
+                        <span class="animate-pulse font-sans ml-1 text-maroon-600 dark:text-maroon-300">|</span>
+                    </div>
+
+                    <!-- Summary Description -->
+                    <p class="text-slate-600 dark:text-cream-300 text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed mb-8">
+                        Mahasiswi <span class="font-semibold text-maroon-800 dark:text-maroon-300">Teknik Informatika</span> di <span class="font-semibold text-slate-900 dark:text-cream-100">Telkom University Purwokerto</span> dengan minat mendalam pada <span class="text-maroon-800 dark:text-maroon-300 font-semibold">Artificial Intelligence (AI)</span> dan <span class="text-maroon-800 dark:text-maroon-300 font-semibold">Data Science</span>. Bersemangat mengubah data mentah menjadi wawasan bermakna dan membangun solusi cerdas yang berdampak nyata.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
+                        <a href="#proyek" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-maroon-900 to-maroon-700 text-cream-50 font-semibold text-sm shadow-lg hover:shadow-maroon-900/40 hover:-translate-y-0.5 transition-all">
+                            Lihat Karya Proyek <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="https://wa.me/6285727610186?text=Halo%20Alya,%20saya%20tertarik%20dengan%20profil%20dan%20portofolio%20kamu!" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-cream-200/80 dark:bg-maroon-950/80 border border-maroon-300/50 dark:border-maroon-800 text-maroon-900 dark:text-cream-100 font-semibold text-sm hover:bg-cream-300/60 dark:hover:bg-maroon-900/50 transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
+                            <span>Hubungi via WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Tech Stack Quick View -->
+                    <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-cream-400 pt-4 border-t border-maroon-200/50 dark:border-maroon-900/40 flex-wrap">
+                        <span class="font-semibold text-slate-700 dark:text-cream-200 flex items-center gap-1.5">
+                            <i class="fa-solid fa-code text-maroon-700 dark:text-maroon-400"></i> Fokus Tech Stack:
+                        </span>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-maroon-950 border border-slate-200 dark:border-maroon-900 shadow-sm font-medium">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-maroon-950 border border-slate-200 dark:border-maroon-900 shadow-sm font-medium">Scikit-Learn</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-maroon-950 border border-slate-200 dark:border-maroon-900 shadow-sm font-medium">Fuzzy Logic</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-maroon-950 border border-slate-200 dark:border-maroon-900 shadow-sm font-medium">Google Colab</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-maroon-950 border border-slate-200 dark:border-maroon-900 shadow-sm font-medium">MySQL</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-maroon-950 border border-slate-200 dark:border-maroon-900 shadow-sm font-medium">HTML/CSS & JS</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-maroon-950 border border-slate-200 dark:border-maroon-900 shadow-sm font-medium">Git & GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Profile Picture & Floating Highlights -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                    <div class="relative group">
+                        <!-- Glow Backdrop -->
+                        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-maroon-700 via-rose-500 to-amber-500 opacity-30 blur-2xl group-hover:opacity-60 transition duration-500"></div>
+
+                        <!-- Photo Frame -->
+                        <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden glass-card p-2 border-2 border-maroon-300/60 dark:border-maroon-800 shadow-2xl flex items-center justify-center">
+                            <img id="profileImg" 
+                                 src="assets/images/profile.jpg" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800'"
+                                 alt="Foto Nurul Muta'Alya" 
+                                 class="w-full h-full object-cover rounded-2xl transition duration-500 group-hover:scale-105">
+
+                            <!-- Upload Photo Button -->
+                            <label for="imageUpload" class="absolute bottom-3 right-3 bg-maroon-900/90 text-cream-50 p-3 rounded-full shadow-lg cursor-pointer hover:bg-maroon-700 hover:scale-110 transition-all" title="Ganti foto profil Anda">
+                                <i class="fa-solid fa-camera text-sm"></i>
+                                <input type="file" id="imageUpload" accept="image/*" class="hidden">
+                            </label>
+                        </div>
+
+                        <!-- Floating Badge 1: Passion -->
+                        <div class="absolute -top-4 -left-4 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200 dark:border-maroon-800 flex items-center gap-2 animate-float">
+                            <span class="text-xl">🤖</span>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] text-slate-400 uppercase font-semibold leading-none">Passion</span>
+                                <span class="text-xs font-bold text-maroon-900 dark:text-cream-100">AI & Data Science</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2: Campus -->
+                        <div class="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-2xl shadow-lg border border-maroon-200 dark:border-maroon-800 flex items-center gap-2 animate-float-delayed">
+                            <span class="text-xl">🎓</span>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] text-slate-400 uppercase font-semibold leading-none">Campus</span>
+                                <span class="text-xs font-bold text-maroon-900 dark:text-cream-100">Telkom Univ Purwokerto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-[11px] text-slate-400 dark:text-slate-500 mt-6 italic text-center">
+                        Klik ikon kamera di sudut foto untuk memilih foto langsung dari perangkat Anda.
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TENTANG SAYA ================= -->
+    <section id="tentang" class="py-20 relative bg-cream-100/60 dark:bg-maroon-950/20 border-y border-maroon-100/50 dark:border-maroon-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-maroon-700 dark:text-maroon-400 uppercase">Perkenalan Profil</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-cream-50 mt-1">Tentang Saya</h2>
+                <div class="w-16 h-1 bg-maroon-700 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Left: Full Biography -->
+                <div class="lg:col-span-7 glass-card p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-semibold text-maroon-700 dark:text-maroon-300 mb-2">
+                            <i class="fa-solid fa-quote-left"></i> Filosofi & Motivasi
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-maroon-900 dark:text-cream-100 mb-4 leading-snug">
+                            "Data bukan sekadar angka, melainkan cerita yang menunggu untuk diungkap, dan AI adalah kunci pembukanya."
+                        </h3>
+
+                        <div class="space-y-4 text-slate-600 dark:text-cream-300 text-sm sm:text-base leading-relaxed">
+                            <p>
+                                Halo! Saya adalah mahasiswi <span class="font-semibold text-maroon-800 dark:text-maroon-300">Teknik Informatika</span> di <span class="font-semibold text-slate-900 dark:text-cream-100">Telkom University Purwokerto</span> yang memiliki rasa ingin tahu tinggi dan passion besar di dunia teknologi, khususnya <strong>Artificial Intelligence (AI)</strong> dan <strong>Data Science</strong>. Bagi saya, data bukan sekadar angka, melainkan cerita yang menunggu untuk diungkap, dan AI adalah kunci untuk membuka wawasan baru dari cerita tersebut.
+                            </p>
+                            <p>
+                                Sebagai mahasiswi informatika, saya menikmati proses mengubah data mentah menjadi <em>insight</em> yang bermakna, membangun model <em>machine learning</em> yang cerdas, serta mengeksplorasi bagaimana teknologi AI dapat menyelesaikan masalah nyata di sekitar kita. Dari analisis statistik, visualisasi data interaktif, hingga pengembangan model prediktif, semuanya adalah bagian dari perjalanan belajar yang saya nikmati.
+                            </p>
+                            <p>
+                                Saya percaya bahwa AI dan Data Science bukan hanya tentang teknologi, tetapi tentang <strong>menciptakan dampak nyata</strong>. Itulah yang memotivasi saya untuk terus belajar, bereksperimen, dan berkembang di bidang yang dinamis ini.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Details Metadata -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-maroon-200/50 dark:border-maroon-900/40">
+                        <div>
+                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider">Domisili</span>
+                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-maroon-700 dark:text-maroon-400 text-xs"></i> Temanggung, Jawa Tengah
+                            </span>
+                        </div>
+                        <div>
+                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider">Universitas</span>
+                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-graduation-cap text-maroon-700 dark:text-maroon-400 text-xs"></i> Telkom Univ Purwokerto
+                            </span>
+                        </div>
+                        <div>
+                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider">Ketersediaan</span>
+                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-briefcase text-emerald-600 text-xs"></i> Magang & Open to Work
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Stats & Things I Love -->
+                <div class="lg:col-span-5 flex flex-col gap-6">
+                    <!-- Quick Stat Cards -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">2+</span>
+                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Proyek Unggulan</span>
+                            <span class="text-[10px] text-slate-400">AI, Fuzzy & Web App</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">1</span>
+                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Pengalaman Magang</span>
+                            <span class="text-[10px] text-slate-400">BPKPAD Temanggung</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">4+</span>
+                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Kepanitiaan & Organisasi</span>
+                            <span class="text-[10px] text-slate-400">MC, PR, Moderator, Event</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">1</span>
+                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Prestasi Nasional</span>
+                            <span class="text-[10px] text-slate-400">Finalist VERTEX 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Things I Love / Hobbies -->
+                    <div class="glass-card p-6 rounded-2xl flex-1 flex flex-col justify-center">
+                        <h4 class="font-serif font-bold text-base text-maroon-900 dark:text-cream-100 mb-3 flex items-center gap-2">
+                            <span>✨</span> Hobi & Minat Pribadi
+                        </h4>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-microphone-lines text-rose-500"></i> Menyanyi
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-guitar text-amber-600"></i> Bermain Musik
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-book-open-reader text-maroon-700"></i> Belajar Hal Baru
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-chart-pie text-emerald-600"></i> Eksplorasi Data
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-mug-hot text-amber-700"></i> Coffee & Tech Chats
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-maroon-700 dark:text-maroon-400 uppercase">Keahlian & Kompetensi</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-cream-50 mt-1">Skills & Capabilities</h2>
+                <div class="w-16 h-1 bg-maroon-700 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Column 1: Hard Skills (Technical) -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-maroon-800 text-cream-50 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-xl text-slate-900 dark:text-cream-100">Technical & Programming Skills</h3>
+                            <p class="text-xs text-slate-500">Bahasa Pemrograman, Machine Learning & Tools</p>
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills Groups -->
+                    <div class="space-y-5">
+                        <!-- AI & Data Science -->
+                        <div class="p-4 rounded-2xl bg-cream-100/70 dark:bg-maroon-950/60 border border-maroon-100 dark:border-maroon-900">
+                            <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 block mb-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-chart-line"></i> AI, Data Science & Machine Learning
+                            </span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Python</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Scikit-Learn</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Scikit-Fuzzy</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Pandas & NumPy</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Fuzzy Logic (Mamdani & Sugeno)</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Matplotlib / Seaborn</span>
+                            </div>
+                        </div>
+
+                        <!-- Core Programming & Database -->
+                        <div class="p-4 rounded-2xl bg-cream-100/70 dark:bg-maroon-950/60 border border-maroon-100 dark:border-maroon-900">
+                            <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 block mb-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-database"></i> Programming & Database
+                            </span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">MySQL Database</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">C++</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Java</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Golang</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">HTML & CSS</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <!-- Development Tools & Workflow -->
+                        <div class="p-4 rounded-2xl bg-cream-100/70 dark:bg-maroon-950/60 border border-maroon-100 dark:border-maroon-900">
+                            <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 block mb-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-toolbox"></i> Tools & Productivity
+                            </span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Git & GitHub</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Google Colab & Jupyter</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Visual Studio Code</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Figma (UI/UX Prototyping)</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-maroon-900 border border-slate-200 dark:border-maroon-800">Google Workspace (Docs, Sheets, Slides)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Soft Skills & Languages -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-maroon-800 text-cream-50 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-xl text-slate-900 dark:text-cream-100">Soft Skills & Interpersonal</h3>
+                                <p class="text-xs text-slate-500">Komunikasi, Kolaborasi & Kemampuan Adaptasi</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl bg-cream-100/70 dark:bg-maroon-950/60 border border-maroon-100 dark:border-maroon-900">
+                                <div class="flex items-center gap-2 mb-1.5">
+                                    <span class="text-maroon-700 dark:text-maroon-400 font-bold">💡</span>
+                                    <span class="font-bold text-sm">Problem Solving</span>
+                                </div>
+                                <p class="text-xs text-slate-500 leading-relaxed">
+                                    Menganalisis data dan akar masalah secara terstruktur untuk menemukan solusi logis dan efisien.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-cream-100/70 dark:bg-maroon-950/60 border border-maroon-100 dark:border-maroon-900">
+                                <div class="flex items-center gap-2 mb-1.5">
+                                    <span class="text-maroon-700 dark:text-maroon-400 font-bold">🤝</span>
+                                    <span class="font-bold text-sm">Kerja Sama Tim</span>
+                                </div>
+                                <p class="text-xs text-slate-500 leading-relaxed">
+                                    Mampu berkolaborasi aktif dengan berbagai latar belakang dalam kepanitiaan maupun proyek teknis.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-cream-100/70 dark:bg-maroon-950/60 border border-maroon-100 dark:border-maroon-900">
+                                <div class="flex items-center gap-2 mb-1.5">
+                                    <span class="text-maroon-700 dark:text-maroon-400 font-bold">🎤</span>
+                                    <span class="font-bold text-sm">Komunikasi & Public Speaking</span>
+                                </div>
+                                <p class="text-xs text-slate-500 leading-relaxed">
+                                    Terbiasa tampil sebagai Master of Ceremony (MC), moderator talkshow, dan menyampaikan ide dengan jelas.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-cream-100/70 dark:bg-maroon-950/60 border border-maroon-100 dark:border-maroon-900">
+                                <div class="flex items-center gap-2 mb-1.5">
+                                    <span class="text-maroon-700 dark:text-maroon-400 font-bold">⏱️</span>
+                                    <span class="font-bold text-sm">Manajemen Waktu & Disiplin</span>
+                                </div>
+                                <p class="text-xs text-slate-500 leading-relaxed">
+                                    Terbukti dalam perannya sebagai timekeeper dan panitia acara: disiplin jadwal serta mampu mengelola tenggat waktu dengan baik.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="mt-6 pt-5 border-t border-maroon-200/50 dark:border-maroon-900/40 flex items-center justify-between text-xs flex-wrap gap-2">
+                        <span class="font-semibold text-slate-700 dark:text-cream-200 flex items-center gap-1.5">
+                            <i class="fa-solid fa-language text-maroon-700 dark:text-maroon-400 text-sm"></i> Bahasa:
+                        </span>
+                        <div class="flex gap-3 flex-wrap font-medium">
+                            <span class="px-3 py-1 rounded-lg bg-cream-100 dark:bg-maroon-950 border border-maroon-200/50 dark:border-maroon-900">
+                                🇮🇩 Bahasa Indonesia (Native)
+                            </span>
+                            <span class="px-3 py-1 rounded-lg bg-cream-100 dark:bg-maroon-950 border border-maroon-200/50 dark:border-maroon-900">
+                                🇬🇧 Bahasa Inggris (Pembelajaran Aktif / Conversational)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROYEK ================= -->
+    <section id="proyek" class="py-20 bg-cream-100/60 dark:bg-maroon-950/20 border-t border-maroon-100/50 dark:border-maroon-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold tracking-widest text-maroon-700 dark:text-maroon-400 uppercase">Portofolio Karya</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-cream-50 mt-1">Proyek Pilihan</h2>
+                <div class="w-16 h-1 bg-maroon-700 mx-auto mt-3 rounded-full"></div>
+                <p class="text-xs sm:text-sm text-slate-500 mt-3">
+                    Implementasi praktis dalam bidang kecerdasan buatan, data science, dan web interaktif.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center items-center gap-2 sm:gap-4 mb-12 flex-wrap">
+                <button onclick="filterProjects('all', this)" class="project-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-maroon-800 text-white shadow-md">
+                    Semua Proyek
+                </button>
+                <button onclick="filterProjects('ai', this)" class="project-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-cream-200/80 dark:bg-maroon-950 text-slate-700 dark:text-cream-200">
+                    AI & Data Science
+                </button>
+                <button onclick="filterProjects('web', this)" class="project-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-cream-200/80 dark:bg-maroon-950 text-slate-700 dark:text-cream-200">
+                    Web Application
+                </button>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
+
+                <!-- PROJECT 1: RemindU -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between" data-category="web">
+                    <div>
+                        <div class="relative overflow-hidden h-48 bg-gradient-to-tr from-maroon-900 to-maroon-700 flex items-center justify-center p-4">
+                            <!-- Visual Graphic / Image Placeholder -->
+                            <img src="assets/images/project-remindu.jpg" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=800'"
+                                 alt="RemindU App" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90">
+                            
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold bg-maroon-950/80 text-cream-50 border border-maroon-500/40">
+                                <i class="fa-solid fa-bell mr-1 text-amber-300"></i> Smart Reminder
+                            </span>
+                            <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[10px] font-bold bg-emerald-900/90 text-emerald-100">
+                                AI Powered
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-slate-900 dark:text-cream-100 mb-2">
+                                RemindU
+                            </h3>
+                            <p class="text-xs text-slate-600 dark:text-cream-300 leading-relaxed mb-4">
+                                Aplikasi web <em>smart reminder</em> yang dirancang untuk membantu pengguna mengelola tugas harian, memantau deadline, dan meningkatkan produktivitas. Dilengkapi fitur <strong>AI Motivasi (Google Gemini AI)</strong> yang memberikan dorongan personal agar pengguna tetap konsisten menyelesaikan target harian dan akademik.
+                            </p>
+
+                            <!-- Tech Stack Badges -->
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">HTML5/CSS3</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">JavaScript</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Google Gemini AI</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Fetch API</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Figma</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Git & GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer Links -->
+                    <div class="p-6 pt-0 border-t border-maroon-100/60 dark:border-maroon-900/40 flex items-center justify-between text-xs font-semibold">
+                        <a href="https://github.com/alyaveira/remindU" target="_blank" rel="noopener noreferrer" class="text-maroon-800 dark:text-maroon-300 hover:underline flex items-center gap-1.5">
+                            <i class="fa-brands fa-github text-sm"></i> Repository GitHub <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                        <span class="text-[10px] text-slate-400">Web Project</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2: Estimasi Keterlambatan Delivery (Fuzzy Logic) -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between" data-category="ai">
+                    <div>
+                        <div class="relative overflow-hidden h-48 bg-gradient-to-tr from-slate-900 to-maroon-900 flex items-center justify-center p-4">
+                            <!-- Visual Graphic / Image Placeholder -->
+                            <img src="assets/images/project-delivery.jpg" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'"
+                                 alt="Fuzzy Logic Delivery Estimation" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90">
+                            
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold bg-maroon-950/80 text-cream-50 border border-maroon-500/40">
+                                <i class="fa-solid fa-chart-line mr-1 text-emerald-400"></i> Data Science & AI
+                            </span>
+                            <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[10px] font-bold bg-amber-900/90 text-amber-100">
+                                Research Model
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-slate-900 dark:text-cream-100 mb-2">
+                                Estimasi Keterlambatan Delivery
+                            </h3>
+                            <p class="text-xs text-slate-600 dark:text-cream-300 leading-relaxed mb-4">
+                                Proyek penelitian prediksi estimasi waktu keterlambatan pengiriman makanan (<em>delivery time</em>) menggunakan pendekatan <strong>Fuzzy Logic</strong>. Membandingkan performa dua metode <em>fuzzy inference system</em>, yaitu <strong>Fuzzy Mamdani</strong> dan <strong>Fuzzy Sugeno</strong>, untuk mengukur akurasi dan efisiensi waktu estimasi.
+                            </p>
+
+                            <!-- Tech Stack Badges -->
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Python</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Scikit-Fuzzy</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Pandas & NumPy</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Matplotlib / Seaborn</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">Google Colab</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer Links -->
+                    <div class="p-6 pt-0 border-t border-maroon-100/60 dark:border-maroon-900/40 flex items-center justify-between text-xs font-semibold">
+                        <a href="https://colab.research.google.com/drive/1K0hXOH04MVB0K-SK4cYJUK8NKZSAyFmr?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-maroon-800 dark:text-maroon-300 hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-code text-sm"></i> Buka Google Colab Notebook <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                        <span class="text-[10px] text-slate-400">Research</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PENGALAMAN ================= -->
+    <section id="pengalaman" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold tracking-widest text-maroon-700 dark:text-maroon-400 uppercase">Rekam Jejak & Kontribusi</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-cream-50 mt-1">Pengalaman & Aktivitas</h2>
+                <div class="w-16 h-1 bg-maroon-700 mx-auto mt-3 rounded-full"></div>
+                <p class="text-xs sm:text-sm text-slate-500 mt-3">
+                    Pengalaman kerja magang, kepemimpinan organisasi, kepanitiaan, dan pengabdian sosial.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex justify-center mb-10 border-b border-cream-300 dark:border-maroon-900/70">
+                <div class="flex gap-4 sm:gap-8 flex-wrap justify-center">
+                    <button onclick="switchExpTab('magang')" id="tab-magang" class="exp-tab-btn border-b-2 border-maroon-800 pb-3 font-serif font-bold text-sm text-maroon-900 dark:text-cream-100 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-xs"></i> Magang & Kerja
+                    </button>
+                    <button onclick="switchExpTab('organisasi')" id="tab-organisasi" class="exp-tab-btn border-b-2 border-transparent pb-3 font-serif font-medium text-sm text-slate-500 dark:text-cream-300/60 hover:text-maroon-800 dark:hover:text-cream-100 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-users text-xs"></i> Organisasi & Kepanitiaan
+                    </button>
+                    <button onclick="switchExpTab('volunteer')" id="tab-volunteer" class="exp-tab-btn border-b-2 border-transparent pb-3 font-serif font-medium text-sm text-slate-500 dark:text-cream-300/60 hover:text-maroon-800 dark:hover:text-cream-100 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-hand-holding-heart text-xs"></i> Volunteer & Relawan
+                    </button>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+
+                <!-- 1. TAB MAGANG & KERJA -->
+                <div id="content-magang" class="exp-content space-y-6">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl relative border-l-4 border-l-maroon-800 shadow-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-3">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg sm:text-xl text-slate-900 dark:text-cream-100">
+                                    Data Entry & Customer Service Intern
+                                </h3>
+                                <span class="text-xs sm:text-sm font-semibold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5 mt-0.5">
+                                    <i class="fa-solid fa-building-columns text-xs"></i> BPKPAD Kabupaten Temanggung
+                                </span>
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">
+                                Juli 2026 - Agustus 2026 (2 Bulan)
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-xs sm:text-sm text-slate-600 dark:text-cream-300 space-y-2 mt-4 leading-relaxed">
+                            <li>Memasukkan dan memverifikasi data aset daerah ke dalam sistem informasi instansi dengan ketelitian dan akurasi tinggi.</li>
+                            <li>Mengelola, memperbarui, dan menyinkronkan data aset sesuai kebutuhan teknis departemen.</li>
+                            <li>Memberikan pelayanan, asistensi, dan informasi administrasi kepada masyarakat secara ramah dan profesional.</li>
+                            <li>Mengoperasikan aplikasi sistem internal instansi untuk mendukung kelancaran operasional harian dan rekapitulasi data.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. TAB ORGANISASI & KEPANITIAAN -->
+                <div id="content-organisasi" class="exp-content hidden space-y-6">
+                    <!-- Welcoming Party Informatics -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl relative border-l-4 border-l-maroon-800 shadow-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <div>
+                                <h3 class="font-serif font-bold text-base sm:text-lg text-slate-900 dark:text-cream-100">
+                                    Event Division Staff & Master of Ceremony (MC)
+                                </h3>
+                                <span class="text-xs sm:text-sm font-semibold text-maroon-800 dark:text-maroon-300">
+                                    Welcoming Party Informatics (WPI) | HMIF IT Telkom Purwokerto
+                                </span>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">
+                                Juli 2026 - September 2026 (3 Bulan)
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-xs sm:text-sm text-slate-600 dark:text-cream-300 space-y-1.5 mt-3 leading-relaxed">
+                            <li>Berkontribusi dalam perencanaan strategis dan pelaksanaan acara orientasi mahasiswa baru Teknik Informatika.</li>
+                            <li>Menyusun rundown acara, aktivitas interaktif, dan alur keseluruhan acara agar berjalan tepat waktu dan dinamis.</li>
+                            <li>Bertindak sebagai Master of Ceremony (MC), memandu jalannya acara serta menjaga keterlibatan dan antusiasme peserta.</li>
+                            <li>Berkoordinasi lintas divisi kepanitiaan guna memastikan kelancaran operasional acara dari persiapan hingga selesai.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Public Relation Staff & Moderator -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl relative border-l-4 border-l-maroon-800 shadow-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <div>
+                                <h3 class="font-serif font-bold text-base sm:text-lg text-slate-900 dark:text-cream-100">
+                                    Public Relation Staff & Moderator
+                                </h3>
+                                <span class="text-xs sm:text-sm font-semibold text-maroon-800 dark:text-maroon-300">
+                                    Entrepreneur Talkshow 2026 | HMIF IT Telkom Purwokerto
+                                </span>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">
+                                Mei 2026 (1 Bulan)
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
+                            Berperan dalam tim Hubungan Masyarakat (Humas) untuk mempublikasikan dan menyukseskan acara seminar kewirausahaan di era digital. Bertindak sebagai <strong>moderator</strong> yang memandu sesi diskusi utama dan tanya-jawab antara audiens dengan narasumber.
+                        </p>
+                    </div>
+
+                    <!-- Market Day 4.0 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl relative border-l-4 border-l-maroon-800 shadow-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <div>
+                                <h3 class="font-serif font-bold text-base sm:text-lg text-slate-900 dark:text-cream-100">
+                                    Event Division Staff
+                                </h3>
+                                <span class="text-xs sm:text-sm font-semibold text-maroon-800 dark:text-maroon-300">
+                                    Market Day 4.0 | HIPMI PT Universitas Telkom
+                                </span>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">
+                                April 2026 - Juni 2026 (3 Bulan)
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
+                            Berkontribusi dalam kepanitiaan festival kewirausahaan mahasiswa bertema <em>"Impactful & Sustainable Entrepreneurship"</em>, mengawal teknis stan usaha dan alur kegiatan expo produk kreatif.
+                        </p>
+                    </div>
+
+                    <!-- CENTIVE 2025 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl relative border-l-4 border-l-maroon-800 shadow-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <div>
+                                <h3 class="font-serif font-bold text-base sm:text-lg text-slate-900 dark:text-cream-100">
+                                    Event Division Staff (Time Keeper)
+                                </h3>
+                                <span class="text-xs sm:text-sm font-semibold text-maroon-800 dark:text-maroon-300">
+                                    CENTIVE 2025 | Telkom University
+                                </span>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">
+                                November 2025 (1 Bulan)
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
+                            Mendampingi para reviewer dan dewan juri dosen di ruangan yang ditugaskan, memantau alokasi durasi presentasi, serta mengingatkan batas waktu di setiap sesi agar keseluruhan konferensi dan seminar berjalan selaras dengan rundown acara.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. TAB VOLUNTEER -->
+                <div id="content-volunteer" class="exp-content hidden space-y-6">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl relative border-l-4 border-l-maroon-800 shadow-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-3">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg sm:text-xl text-slate-900 dark:text-cream-100">
+                                    Administrasi (Volunteer Pelatihan Bahasa Isyarat)
+                                </h3>
+                                <span class="text-xs sm:text-sm font-semibold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5 mt-0.5">
+                                    <i class="fa-solid fa-hands-asl-interpreting text-xs"></i> Gerakan Asa Season 1 | Pemuda Pemudi Mengabdi (PPM) Banyumas
+                                </span>
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300">
+                                5 Oktober 2026 - 30 Oktober 2026 (1 Bulan)
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-xs sm:text-sm text-slate-600 dark:text-cream-300 space-y-2 mt-4 leading-relaxed">
+                            <li>Bertanggung jawab dalam pengelolaan administrasi program, termasuk pendataan peserta dan pengarsipan berkas kegiatan.</li>
+                            <li>Mendukung operasional pelaksanaan kegiatan pelatihan bahasa isyarat untuk memfasilitasi inklusi komunikasi bagi masyarakat.</li>
+                            <li>Berkoordinasi aktif dengan divisi lain guna memastikan seluruh kebutuhan administratif relawan dan peserta terpenuhi secara efisien.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRESTASI & SERTIFIKASI ================= -->
+    <section id="prestasi" class="py-20 bg-cream-100/60 dark:bg-maroon-950/20 border-t border-maroon-100/50 dark:border-maroon-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-maroon-700 dark:text-maroon-400 uppercase">Pencapaian & Kualifikasi</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-cream-50 mt-1">Prestasi & Sertifikasi</h2>
+                <div class="w-16 h-1 bg-maroon-700 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- PRESTASI -->
+                <div class="glass-card p-7 rounded-3xl flex gap-5 items-start border border-amber-300/50 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex-shrink-0 flex items-center justify-center font-bold text-2xl shadow-sm">
+                        🏆
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider">
+                            Pencapaian Kompetisi
+                        </span>
+                        <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-cream-100 mt-1">
+                            Finalist | Vetron Essay Revolution and Talent Exhibition (VERTEX) 2026
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
+                            Berhasil meraih posisi Finalis dalam kompetisi karya esai dan eksibisi bakat berskala nasional, menyajikan gagasan kritis dan inovatif mengenai pengembangan teknologi dan solusi digital.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SERTIFIKASI -->
+                <div class="glass-card p-7 rounded-3xl flex gap-5 items-start border border-maroon-300/40 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex-shrink-0 flex items-center justify-center font-bold text-2xl shadow-sm">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-maroon-800 dark:text-maroon-300 uppercase tracking-wider">
+                            Sertifikasi Profesional
+                        </span>
+                        <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-cream-100 mt-1">
+                            Data Science Certification
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
+                            Mempelajari fondasi pemrosesan dataset, eksplorasi data analitik (EDA), pemodelan machine learning prediktif, serta implementasi Python untuk riset data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KONTAK ================= -->
+    <section id="kontak" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-maroon-700 dark:text-maroon-400 uppercase">Mari Terhubung</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-cream-50 mt-1">Hubungi Alya</h2>
+                <div class="w-16 h-1 bg-maroon-700 mx-auto mt-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-cream-300 text-xs sm:text-sm mt-4">
+                    Tertarik berkolaborasi dalam proyek AI & Data Science, atau memiliki tawaran kesempatan magang/pekerjaan? Silakan hubungi saya melalui jalur berikut:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Info Cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <!-- Email Card -->
+                    <div class="glass-card p-6 rounded-3xl flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-maroon-800 text-cream-50 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400">Email Utama</span>
+                                <a href="mailto:mutaalya1108@gmail.com" class="font-semibold text-xs sm:text-sm text-slate-800 dark:text-cream-100 hover:text-maroon-700 dark:hover:text-maroon-300">
+                                    mutaalya1108@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <button onclick="copyToClipboard('mutaalya1108@gmail.com', 'Email')" class="p-2.5 rounded-xl bg-cream-200 dark:bg-maroon-900 text-xs hover:bg-maroon-800 hover:text-white transition-all" title="Salin Email">
+                            <i class="fa-solid fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <!-- WhatsApp Card -->
+                    <div class="glass-card p-6 rounded-3xl flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-700 text-cream-50 flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400">WhatsApp Langsung</span>
+                                <a href="https://wa.me/6285727610186" target="_blank" rel="noopener noreferrer" class="font-semibold text-xs sm:text-sm text-slate-800 dark:text-cream-100 hover:text-emerald-600">
+                                    +62 857-2761-0186
+                                </a>
+                            </div>
+                        </div>
+                        <button onclick="copyToClipboard('085727610186', 'Nomor WhatsApp')" class="p-2.5 rounded-xl bg-cream-200 dark:bg-maroon-900 text-xs hover:bg-maroon-800 hover:text-white transition-all" title="Salin Nomor WhatsApp">
+                            <i class="fa-solid fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <!-- Social Icons Grid -->
+                    <div class="grid grid-cols-3 gap-3">
+                        <a href="https://www.linkedin.com/in/nurul-muta-alya-666902275/" target="_blank" rel="noopener noreferrer" class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center hover:bg-maroon-800 hover:text-white transition-all group">
+                            <i class="fa-brands fa-linkedin text-2xl mb-1 text-maroon-800 dark:text-maroon-300 group-hover:text-white"></i>
+                            <span class="text-[11px] font-semibold">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Alyamnrr" target="_blank" rel="noopener noreferrer" class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center hover:bg-maroon-800 hover:text-white transition-all group">
+                            <i class="fa-brands fa-github text-2xl mb-1 text-maroon-800 dark:text-maroon-300 group-hover:text-white"></i>
+                            <span class="text-[11px] font-semibold">GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/alyamnrr?cplk=a2lxM3pjYnQ4d2M=" target="_blank" rel="noopener noreferrer" class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center hover:bg-maroon-800 hover:text-white transition-all group">
+                            <i class="fa-brands fa-instagram text-2xl mb-1 text-maroon-800 dark:text-maroon-300 group-hover:text-white"></i>
+                            <span class="text-[11px] font-semibold">Instagram</span>
+                        </a>
+                    </div>
+
+                    <!-- Domisili & Campus Card -->
+                    <div class="glass-card p-6 rounded-3xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">Domisili & Kampus</span>
+                            <span class="font-semibold text-xs sm:text-sm text-slate-800 dark:text-cream-100">
+                                Temanggung & Telkom University Purwokerto, Indonesia
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="lg:col-span-7 glass-card p-8 rounded-3xl shadow-sm">
+                    <h3 class="font-serif font-bold text-xl text-maroon-900 dark:text-cream-100 mb-2">
+                        Kirim Pesan Langsung
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-6">
+                        Pesan akan otomatis dialihkan ke kontak WhatsApp saya agar kita bisa langsung berdiskusi dengan cepat.
+                    </p>
+
+                    <form id="contactForm" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="formName" class="block text-xs font-semibold mb-1 text-slate-700 dark:text-cream-200">Nama Anda</label>
+                                <input type="text" id="formName" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-maroon-950/70 border border-maroon-200 dark:border-maroon-900 focus:outline-none focus:ring-2 focus:ring-maroon-800 text-xs sm:text-sm">
+                            </div>
+                            <div>
+                                <label for="formEmail" class="block text-xs font-semibold mb-1 text-slate-700 dark:text-cream-200">Email Anda</label>
+                                <input type="email" id="formEmail" required placeholder="nama@perusahaan.com" class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-maroon-950/70 border border-maroon-200 dark:border-maroon-900 focus:outline-none focus:ring-2 focus:ring-maroon-800 text-xs sm:text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="formSubject" class="block text-xs font-semibold mb-1 text-slate-700 dark:text-cream-200">Subjek Pesan</label>
+                            <input type="text" id="formSubject" required placeholder="Tawaran Magang / Diskusi Proyek AI / Kolaborasi" class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-maroon-950/70 border border-maroon-200 dark:border-maroon-900 focus:outline-none focus:ring-2 focus:ring-maroon-800 text-xs sm:text-sm">
+                        </div>
+
+                        <div>
+                            <label for="formMessage" class="block text-xs font-semibold mb-1 text-slate-700 dark:text-cream-200">Isi Pesan</label>
+                            <textarea id="formMessage" rows="4" required placeholder="Halo Alya, saya tertarik mendiskusikan peluang..." class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-maroon-950/70 border border-maroon-200 dark:border-maroon-900 focus:outline-none focus:ring-2 focus:ring-maroon-800 text-xs sm:text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-maroon-900 to-maroon-700 text-cream-50 font-semibold text-xs sm:text-sm shadow-md hover:shadow-maroon-900/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                            <span>Kirim ke WhatsApp Alya</span>
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="py-8 bg-cream-200/60 dark:bg-[#0d0709] border-t border-maroon-200/40 dark:border-maroon-950 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-lg bg-maroon-800 text-cream-50 font-serif text-xs font-bold flex items-center justify-center">A</span>
+                <span class="font-serif font-bold text-maroon-900 dark:text-cream-100">Designed & Crafted for Nurul Muta'Alya</span>
+            </div>
+            <span>&copy; 2026 Telkom University Purwokerto • Teknik Informatika. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
