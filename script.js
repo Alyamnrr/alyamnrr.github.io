@@ -267,3 +267,34 @@ function showToast(message) {
         setTimeout(() => toast.remove(), 300);
     }, 3200);
 }
+
+
+// ---------- 11. DOCUMENTATION MODAL PREVIEW ----------
+function openDocModal(imageSrc, caption) {
+    const modal = document.getElementById('docModal');
+    const modalImg = document.getElementById('docModalImg');
+    const modalCaption = document.getElementById('docModalCaption');
+    if (!modal || !modalImg) return;
+
+    modalImg.src = imageSrc;
+    if (modalCaption) modalCaption.textContent = caption || 'Dokumentasi Kegiatan';
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDocModal() {
+    const modal = document.getElementById('docModal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeDocModal();
+    }
+});

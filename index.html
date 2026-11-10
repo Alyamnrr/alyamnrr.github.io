@@ -138,7 +138,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
                 <!-- Left Column: Intro & Badges -->
-                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <div class="lg:col-span-7 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
                     <!-- Status Badge -->
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-maroon-100 dark:bg-maroon-950/90 border border-maroon-200 dark:border-maroon-800 text-maroon-800 dark:text-maroon-300 text-xs font-semibold tracking-wide mb-6">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -161,11 +161,6 @@
                         <span id="typingText" class="font-serif italic font-semibold"></span>
                         <span class="animate-pulse font-sans ml-1 text-maroon-600 dark:text-maroon-300">|</span>
                     </div>
-
-                    <!-- Summary Description -->
-                    <p class="text-slate-600 dark:text-cream-300 text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed mb-8">
-                        Mahasiswi <span class="font-semibold text-maroon-800 dark:text-maroon-300">Teknik Informatika</span> di <span class="font-semibold text-slate-900 dark:text-cream-100">Telkom University Purwokerto</span> dengan minat mendalam pada <span class="text-maroon-800 dark:text-maroon-300 font-semibold">Artificial Intelligence (AI)</span> dan <span class="text-maroon-800 dark:text-maroon-300 font-semibold">Data Science</span>. Bersemangat mengubah data mentah menjadi wawasan bermakna dan membangun solusi cerdas yang berdampak nyata.
-                    </p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
@@ -196,7 +191,7 @@
                 </div>
 
                 <!-- Right Column: Profile Picture & Floating Highlights -->
-                <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                <div class="lg:col-span-5 order-1 lg:order-2 flex flex-col items-center justify-center">
                     <div class="relative group">
                         <!-- Ambient Glow Backdrop -->
                         <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-maroon-700/30 via-rose-400/30 to-amber-300/20 opacity-40 blur-2xl group-hover:opacity-70 transition duration-700"></div>
@@ -726,6 +721,30 @@
                             <li>Memberikan pelayanan, asistensi, dan informasi administrasi kepada masyarakat secara ramah dan profesional.</li>
                             <li>Mengoperasikan aplikasi sistem internal instansi untuk mendukung kelancaran operasional harian dan rekapitulasi data.</li>
                         </ul>
+
+                        <!-- Dokumentasi Magang BPKPAD -->
+                        <div class="mt-5 pt-4 border-t border-maroon-100/60 dark:border-maroon-900/40">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera-retro"></i> Dokumentasi Magang BPKPAD
+                                </span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-500 italic">Klik foto untuk perbesar 🔍</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-40 sm:h-44 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-magang-1.jpg', 'Dokumentasi Magang BPKPAD Temanggung : Ruang Kerja & Sistem Administrasi')">
+                                    <img src="assets/images/doc-magang-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi Magang BPKPAD 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
+                                        <span class="text-[11px] text-white font-medium flex items-center gap-1"><i class="fa-solid fa-expand text-[10px] text-amber-300"></i> Suasana Kantor & Sistem Data</span>
+                                    </div>
+                                </div>
+                                <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-40 sm:h-44 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-magang-2.jpg', 'Dokumentasi Pelayanan Publik & Rekapitulasi Data Aset Daerah')">
+                                    <img src="assets/images/doc-magang-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi Magang BPKPAD 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
+                                        <span class="text-[11px] text-white font-medium flex items-center gap-1"><i class="fa-solid fa-expand text-[10px] text-amber-300"></i> Pelayanan & Asistensi Aset</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -752,6 +771,22 @@
                             <li>Bertindak sebagai Master of Ceremony (MC), memandu jalannya acara serta menjaga keterlibatan dan antusiasme peserta.</li>
                             <li>Berkoordinasi lintas divisi kepanitiaan guna memastikan kelancaran operasional acara dari persiapan hingga selesai.</li>
                         </ul>
+
+                        <!-- Dokumentasi MC WPI -->
+                        <div class="mt-4 pt-3 border-t border-maroon-100/60 dark:border-maroon-900/40">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera-retro"></i> Dokumentasi MC & Kepanitiaan
+                                </span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-500 italic">Klik untuk perbesar 🔍</span>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-44 sm:h-48 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-wpi-mc.jpg', 'Dokumentasi MC Welcoming Party Informatics (WPI) Telkom University')">
+                                <img src="assets/images/doc-wpi-mc.jpg" onerror="this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi MC Welcoming Party" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+                                    <span class="text-xs text-white font-medium flex items-center gap-1.5"><i class="fa-solid fa-microphone-lines text-amber-300"></i> Pemandu Acara (MC) Orientasi Mahasiswa Baru</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Public Relation Staff & Moderator -->
@@ -772,6 +807,22 @@
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
                             Berperan dalam tim Hubungan Masyarakat (Humas) untuk mempublikasikan dan menyukseskan acara seminar kewirausahaan di era digital. Bertindak sebagai <strong>moderator</strong> yang memandu sesi diskusi utama dan tanya-jawab antara audiens dengan narasumber.
                         </p>
+
+                        <!-- Dokumentasi Moderator Talkshow -->
+                        <div class="mt-4 pt-3 border-t border-maroon-100/60 dark:border-maroon-900/40">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera-retro"></i> Dokumentasi Moderator
+                                </span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-500 italic">Klik untuk perbesar 🔍</span>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-44 sm:h-48 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-talkshow-moderator.jpg', 'Dokumentasi Moderator Entrepreneur Talkshow 2026 HMIF')">
+                                <img src="assets/images/doc-talkshow-moderator.jpg" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi Moderator Talkshow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+                                    <span class="text-xs text-white font-medium flex items-center gap-1.5"><i class="fa-solid fa-comments text-amber-300"></i> Moderator Sesi Diskusi & Talkshow Kewirausahaan</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Market Day 4.0 -->
@@ -792,6 +843,22 @@
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
                             Berkontribusi dalam kepanitiaan festival kewirausahaan mahasiswa bertema <em>"Impactful & Sustainable Entrepreneurship"</em>, mengawal teknis stan usaha dan alur kegiatan expo produk kreatif.
                         </p>
+
+                        <!-- Dokumentasi Market Day -->
+                        <div class="mt-4 pt-3 border-t border-maroon-100/60 dark:border-maroon-900/40">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera-retro"></i> Dokumentasi Kegiatan
+                                </span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-500 italic">Klik untuk perbesar 🔍</span>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-44 sm:h-48 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-marketday.jpg', 'Dokumentasi Kepanitiaan Market Day 4.0 HIPMI PT Telkom')">
+                                <img src="assets/images/doc-marketday.jpg" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi Market Day" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+                                    <span class="text-xs text-white font-medium flex items-center gap-1.5"><i class="fa-solid fa-shop text-amber-300"></i> Pengelolaan Alur Expo & Stan Kewirausahaan</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- CENTIVE 2025 -->
@@ -812,6 +879,22 @@
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-cream-300 mt-2 leading-relaxed">
                             Mendampingi para reviewer dan dewan juri dosen di ruangan yang ditugaskan, memantau alokasi durasi presentasi, serta mengingatkan batas waktu di setiap sesi agar keseluruhan konferensi dan seminar berjalan selaras dengan rundown acara.
                         </p>
+
+                        <!-- Dokumentasi CENTIVE -->
+                        <div class="mt-4 pt-3 border-t border-maroon-100/60 dark:border-maroon-900/40">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera-retro"></i> Dokumentasi Kegiatan
+                                </span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-500 italic">Klik untuk perbesar 🔍</span>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-44 sm:h-48 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-centive.jpg', 'Dokumentasi Time Keeper CENTIVE 2025 Telkom University')">
+                                <img src="assets/images/doc-centive.jpg" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi CENTIVE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+                                    <span class="text-xs text-white font-medium flex items-center gap-1.5"><i class="fa-solid fa-stopwatch text-amber-300"></i> Pendampingan Juri Dosen & Sesi Presentasi</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -836,6 +919,30 @@
                             <li>Mendukung kelancaran operasional pelaksanaan kelas pelatihan bahasa isyarat untuk memfasilitasi inklusi komunikasi bagi masyarakat.</li>
                             <li>Berkoordinasi aktif dengan divisi kepanitiaan lain guna memastikan kebutuhan administratif panitia dan peserta terpenuhi dengan baik, serta turut aktif berpartisipasi mempelajari bahasa isyarat.</li>
                         </ul>
+
+                        <!-- Dokumentasi Volunteer Bahasa Isyarat -->
+                        <div class="mt-5 pt-4 border-t border-maroon-100/60 dark:border-maroon-900/40">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-camera-retro"></i> Dokumentasi Kegiatan Pelatihan
+                                </span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-500 italic">Klik foto untuk perbesar 🔍</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-40 sm:h-44 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-bahasa-isyarat-1.jpg', 'Dokumentasi Pelaksanaan Pelatihan Bahasa Isyarat Gerakan Asa')">
+                                    <img src="assets/images/doc-bahasa-isyarat-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi Pelatihan Bahasa Isyarat 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
+                                        <span class="text-[11px] text-white font-medium flex items-center gap-1"><i class="fa-solid fa-expand text-[10px] text-amber-300"></i> Sesi Kelas Pelatihan Bahasa Isyarat</span>
+                                    </div>
+                                </div>
+                                <div class="relative rounded-2xl overflow-hidden border border-maroon-200/60 dark:border-maroon-800/60 h-40 sm:h-44 group cursor-pointer shadow-sm bg-maroon-950/5" onclick="openDocModal('assets/images/doc-bahasa-isyarat-2.jpg', 'Dokumentasi Tim Panitia Administrasi & Peserta')">
+                                    <img src="assets/images/doc-bahasa-isyarat-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800'" alt="Dokumentasi Tim Panitia Administrasi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
+                                        <span class="text-[11px] text-white font-medium flex items-center gap-1"><i class="fa-solid fa-expand text-[10px] text-amber-300"></i> Pengelolaan Administrasi & Peserta</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1036,6 +1143,25 @@
             <span>&copy; 2026 Telkom University Purwokerto • Teknik Informatika. All rights reserved.</span>
         </div>
     </footer>
+
+    <!-- ================= MODAL DOKUMENTASI ================= -->
+    <div id="docModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 transition-all duration-300" onclick="closeDocModal()">
+        <div class="relative max-w-3xl w-full glass-card bg-white/95 dark:bg-[#1a1115]/95 border border-maroon-300/50 dark:border-maroon-800/60 rounded-3xl p-4 sm:p-6 shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <button onclick="closeDocModal()" aria-label="Tutup Preview" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-cream-100 hover:bg-maroon-800 hover:text-white transition flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+            <div class="max-h-[70vh] sm:max-h-[75vh] overflow-hidden rounded-2xl flex items-center justify-center bg-black/5 dark:bg-black/30">
+                <img id="docModalImg" src="" alt="Dokumentasi Kegiatan" class="max-h-[68vh] sm:max-h-[73vh] w-auto max-w-full object-contain rounded-xl shadow-inner">
+            </div>
+            <div class="mt-4 flex items-center justify-between text-xs sm:text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                    <span id="docModalCaption" class="font-serif font-bold text-maroon-900 dark:text-cream-100"></span>
+                </div>
+                <span class="text-[11px] text-slate-400">Dokumentasi Alya ✨</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>

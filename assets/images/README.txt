@@ -1,25 +1,53 @@
 =======================================================
-PANDUAN PENYIMPANAN GAMBAR PORTOFOLIO : ALYA
+PANDUAN LENGKAP PENYIMPANAN GAMBAR PORTOFOLIO : ALYA
+Folder: D:\Project portofolio alya\assets\images\
 =======================================================
 
-Folder ini khusus untuk menyimpan file gambar portofolio web kamu.
-Letakkan file gambar dengan nama-nama berikut di dalam folder ini:
+Cukup salin (copy-paste) file foto kamu ke dalam folder ini dengan nama-nama berikut:
 
-1. FOTO PROFIL UTAMA (Di Halaman Utama / Hero):
-   Nama file: profile.jpg
-   Ukuran ideal: Foto vertikal / portrait
+-------------------------------------------------------
+1. FOTO PROFIL & IDENTITAS:
+-------------------------------------------------------
+- profile.jpg
+  -> Foto profil utama Alya di halaman pertama (Hero Section). Format tegak/portrait.
+- selfie.jpg
+  -> Foto selfie Alya untuk lingkaran avatar kecil di pojok kiri atas (Navbar).
 
-2. FOTO SELFIE (Untuk Avatar Pojok Kiri Atas / Navbar):
-   Nama file: selfie.jpg
-   Ukuran ideal: Foto selfie / foto wajah bulat atau kotak
+-------------------------------------------------------
+2. FOTO PROYEK:
+-------------------------------------------------------
+- project-remindu.jpg
+  -> Tangkapan layar / mockup aplikasi web RemindU (Smart Reminder & AI).
+- project-delivery.jpg
+  -> Tangkapan layar riset estimasi delivery (Fuzzy Logic Mamdani vs Sugeno).
 
-3. GAMBAR PROYEK 1 (RemindU):
-   Nama file: project-remindu.jpg
-   Ukuran ideal: 800x450 px (Landscape / screenshot aplikasi RemindU)
+-------------------------------------------------------
+3. FOTO DOKUMENTASI KEGIATAN & PENGALAMAN:
+-------------------------------------------------------
+A. Magang BPKPAD Temanggung:
+   - doc-magang-1.jpg
+     -> Foto suasana kantor / meja kerja / sistem administrasi di BPKPAD.
+   - doc-magang-2.jpg
+     -> Foto pelayanan data aset daerah / kegiatan bersama tim magang.
 
-4. GAMBAR PROYEK 2 (Fuzzy Logic Delivery):
-   Nama file: project-delivery.jpg
-   Ukuran ideal: 800x450 px (Landscape / screenshot grafik fuzzy atau Google Colab)
+B. Organisasi & Kepanitiaan:
+   - doc-wpi-mc.jpg
+     -> Foto Alya saat menjadi MC di Welcoming Party Informatics (WPI).
+   - doc-talkshow-moderator.jpg
+     -> Foto Alya saat menjadi Moderator di Entrepreneur Talkshow 2026.
+   - doc-marketday.jpg
+     -> Foto kegiatan tim divisi acara di Market Day 4.0 HIPMI PT Telkom.
+   - doc-centive.jpg
+     -> Foto saat bertugas sebagai Time Keeper di seminar CENTIVE 2025.
 
-Catatan:
-Jika file selfie.jpg belum kamu masukkan, sistem otomatis memakai foto profile.jpg terlebih dahulu agar tidak ada gambar rusak.
+C. Volunteer / Relawan:
+   - doc-bahasa-isyarat-1.jpg
+     -> Foto suasana kelas pelatihan bahasa isyarat Gerakan Asa PPM.
+   - doc-bahasa-isyarat-2.jpg
+     -> Foto bersama tim panitia administrasi dan peserta kegiatan.
+
+-------------------------------------------------------
+CATATAN PENTING:
+Jika kamu belum memasukkan file foto tertentu, website sudah otomatis menampilkan gambar cadangan (fallback) yang estetik dan rapi, sehingga TIDAK AKAN PERNAH ada gambar yang rusak (broken image)!
+Foto dokumentasi di website juga bisa diklik untuk melihat tampilan besarnya (preview popup modal).
+=======================================================
