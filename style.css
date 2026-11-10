@@ -138,3 +138,123 @@ body {
     }
 }
 
+/* ---------- 9. PROFESSIONAL ENTRANCE & SCROLL ANIMATIONS ---------- */
+@keyframes navFadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroPhotoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.93) translateY(24px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes ambientPulse {
+    0%, 100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.25;
+    }
+    50% {
+        transform: scale(1.15) translate(20px, -15px);
+        opacity: 0.45;
+    }
+}
+
+@keyframes floralBreathing {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(2.5deg) scale(1.03);
+    }
+}
+
+.anim-nav {
+    animation: navFadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-hero-photo {
+    animation: heroPhotoReveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.anim-badge {
+    animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.anim-name {
+    animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.anim-subname {
+    animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.anim-campus {
+    animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
+}
+
+.anim-typing {
+    animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.56s both;
+}
+
+.anim-cta {
+    animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.64s both;
+}
+
+.anim-tech {
+    animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both;
+}
+
+.anim-ambient-1 {
+    animation: ambientPulse 14s ease-in-out infinite;
+}
+
+.anim-ambient-2 {
+    animation: ambientPulse 18s ease-in-out infinite reverse;
+}
+
+.anim-floral-1 {
+    animation: floralBreathing 8s ease-in-out infinite;
+}
+
+.anim-floral-2 {
+    animation: floralBreathing 9s ease-in-out infinite reverse;
+}
+
+/* Scroll reveal classes */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+

@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
-                showToast('Tema terang diaktifkan ☀️');
+                showToast('Tema terang diaktifkan');
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
-                showToast('Tema gelap diaktifkan 🌙');
+                showToast('Tema gelap diaktifkan');
             }
         });
     }
@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---------- 3. TYPING EFFECT ----------
     const words = [
-        "AI Engineer 🤖",
-        "Data Science Enthusiast 📊",
-        "Teknik Informatika @ Telkom Univ 🎓",
-        "Machine Learning & Fuzzy Logic 💡",
-        "Music & Tech Lover 🎶"
+        "AI Engineer",
+        "Data Science Enthusiast",
+        "Teknik Informatika • Telkom University Purwokerto",
+        "Machine Learning & Fuzzy Logic",
+        "Analytical & Creative Problem Solver"
     ];
     let wordIndex = 0;
     let charIndex = 0;
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const btnText = submitBtn ? submitBtn.querySelector('span') : null;
             if (btnText) btnText.textContent = 'Sedang Mengirim...';
 
-            showToast('Mengirim pesan ke email Alya... ✉️');
+            showToast('Mengirim pesan ke email Alya...');
 
             try {
                 const response = await fetch('https://formsubmit.co/ajax/mutaalya1108@gmail.com', {
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    showToast('Pesan berhasil terkirim ke mutaalya1108@gmail.com! ✨');
+                    showToast('Pesan berhasil terkirim ke mutaalya1108@gmail.com');
                     contactForm.reset();
                 } else {
                     throw new Error('Gagal mengirim via FormSubmit API');
@@ -157,12 +157,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Fallback: langsung buka aplikasi email pengguna
                 const mailtoUrl = `mailto:mutaalya1108@gmail.com?subject=${encodeURIComponent(`[Portofolio] ${subject}`)}&body=${encodeURIComponent(`Halo Alya,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
                 window.location.href = mailtoUrl;
-                showToast('Membuka aplikasi email untuk mengirim pesan ke Alya... ✉️');
+                showToast('Membuka aplikasi email untuk mengirim pesan ke Alya');
                 contactForm.reset();
             } finally {
                 if (btnText) btnText.textContent = 'Kirim Pesan ke Email Alya';
             }
         });
+    }
+
+
+    // ---------- 7. SCROLL REVEAL (Intersection Observer) ----------
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    if ('IntersectionObserver' in window && revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach((el) => revealObserver.observe(el));
+    } else {
+        revealElements.forEach((el) => el.classList.add('is-revealed'));
     }
 
 });
@@ -224,7 +245,7 @@ function switchExpTab(tabName) {
 function copyToClipboard(text, label = 'Teks') {
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(() => {
-            showToast(`${label} berhasil disalin ke clipboard! 📋`);
+            showToast(`${label} berhasil disalin ke clipboard`);
         }).catch(() => fallbackCopy(text, label));
     } else {
         fallbackCopy(text, label);
@@ -238,7 +259,7 @@ function fallbackCopy(text, label) {
     tempInput.select();
     document.execCommand('copy');
     document.body.removeChild(tempInput);
-    showToast(`${label} berhasil disalin ke clipboard! 📋`);
+    showToast(`${label} berhasil disalin ke clipboard`);
 }
 
 
@@ -254,7 +275,7 @@ function showToast(message) {
 
     const toast = document.createElement('div');
     toast.className = 'bg-maroon-900 text-cream-50 text-xs sm:text-sm px-5 py-3 rounded-2xl shadow-xl border border-maroon-700/80 pointer-events-auto transition-all transform duration-300 translate-y-2 opacity-0 flex items-center gap-2.5';
-    toast.innerHTML = `<i class="fa-solid fa-sparkles text-amber-300"></i> <span>${message}</span>`;
+    toast.innerHTML = `<i class="fa-solid fa-circle-check text-rose-300"></i> <span>${message}</span>`;
 
     container.appendChild(toast);
 
