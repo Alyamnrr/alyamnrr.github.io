@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const words = [
         "AI Engineer",
         "Data Science Enthusiast",
-        "Teknik Informatika • Telkom University Purwokerto",
         "Machine Learning & Fuzzy Logic",
         "Analytical & Creative Problem Solver"
     ];
