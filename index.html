@@ -86,7 +86,6 @@
 
                 <!-- Desktop Nav Links -->
                 <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-                    <a href="#tentang" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Tentang</a>
                     <a href="#skills" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Skills</a>
                     <a href="#proyek" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Proyek</a>
                     <a href="#pengalaman" class="hover:text-maroon-700 dark:hover:text-maroon-300 transition-colors">Pengalaman</a>
@@ -115,7 +114,6 @@
 
             <!-- Mobile Dropdown Menu -->
             <div id="mobileMenu" class="hidden md:hidden mt-2 glass-nav rounded-2xl p-5 flex flex-col gap-3 shadow-lg border border-maroon-100 dark:border-maroon-900">
-                <a href="#tentang" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Tentang Alya</a>
                 <a href="#skills" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Skills & Keahlian</a>
                 <a href="#proyek" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Portofolio Proyek</a>
                 <a href="#pengalaman" class="py-2 border-b border-cream-200 dark:border-maroon-900/40 text-sm font-medium">Pengalaman & Organisasi</a>
@@ -152,9 +150,21 @@
                             Nurul Muta'Alya
                         </span> ✨
                     </h1>
-                    <p class="text-base sm:text-lg font-serif italic text-maroon-700 dark:text-rose-300 font-medium mb-4 flex items-center gap-1.5 justify-center lg:justify-start">
+                    <p class="text-base sm:text-lg font-serif italic text-maroon-700 dark:text-rose-300 font-medium mb-3 flex items-center gap-1.5 justify-center lg:justify-start">
                         <span>(Bisa dipanggil Alya 🌸)</span>
                     </p>
+
+                    <!-- Campus & Major Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-200/80 dark:bg-maroon-900/60 border border-maroon-200 dark:border-maroon-800 shadow-sm mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_Telkom_University_potrait.png/120px-Logo_Telkom_University_potrait.png" 
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" 
+                             alt="Logo Telkom University" 
+                             class="w-4 h-4 object-contain">
+                        <i class="fa-solid fa-graduation-cap text-maroon-700 dark:text-maroon-400 text-xs hidden"></i>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-cream-100">
+                            S1 Teknik Informatika • <span class="text-maroon-800 dark:text-maroon-300">Telkom University Purwokerto</span>
+                        </span>
+                    </div>
 
                     <!-- Typing Subtitle -->
                     <div class="text-lg sm:text-2xl font-medium text-maroon-800 dark:text-maroon-300 mb-6 min-h-[36px] flex items-center">
@@ -164,8 +174,8 @@
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
-                        <a href="#proyek" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-maroon-900 to-maroon-700 text-cream-50 font-semibold text-sm shadow-lg hover:shadow-maroon-900/40 hover:-translate-y-0.5 transition-all">
-                            Lihat Karya Proyek <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        <a href="#skills" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-maroon-900 to-maroon-700 text-cream-50 font-semibold text-sm shadow-lg hover:shadow-maroon-900/40 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                            <span>Lihat Skills & Karya</span> <i class="fa-solid fa-arrow-down text-xs"></i>
                         </a>
                         <a href="https://wa.me/6285727610186?text=Halo%20Alya,%20saya%20tertarik%20dengan%20profil%20dan%20portofolio%20kamu!" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-cream-200/80 dark:bg-maroon-950/80 border border-maroon-300/50 dark:border-maroon-800 text-maroon-900 dark:text-cream-100 font-semibold text-sm hover:bg-cream-300/60 dark:hover:bg-maroon-900/50 transition-all flex items-center gap-2">
                             <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
@@ -284,120 +294,6 @@
         </div>
     </section>
 
-    <!-- ================= TENTANG SAYA ================= -->
-    <section id="tentang" class="py-20 relative bg-cream-100/60 dark:bg-maroon-950/20 border-y border-maroon-100/50 dark:border-maroon-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold tracking-widest text-maroon-700 dark:text-maroon-400 uppercase">Perkenalan Profil</span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-cream-50 mt-1">Tentang Saya</h2>
-                <div class="w-16 h-1 bg-maroon-700 mx-auto mt-3 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                <!-- Left: Full Biography -->
-                <div class="lg:col-span-7 glass-card p-8 rounded-3xl shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="inline-flex items-center gap-2 text-xs font-semibold text-maroon-700 dark:text-maroon-300 mb-2">
-                            <i class="fa-solid fa-quote-left"></i> Filosofi & Motivasi
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-maroon-900 dark:text-cream-100 mb-4 leading-snug">
-                            "Data bukan sekadar angka, melainkan cerita yang menunggu untuk diungkap, dan AI adalah kunci pembukanya."
-                        </h3>
-
-                        <div class="space-y-4 text-slate-600 dark:text-cream-300 text-sm sm:text-base leading-relaxed">
-                            <p>
-                                Halo! Saya adalah mahasiswi <span class="font-semibold text-maroon-800 dark:text-maroon-300">Teknik Informatika</span> di <span class="font-semibold text-slate-900 dark:text-cream-100">Telkom University Purwokerto</span> yang memiliki rasa ingin tahu tinggi dan passion besar di dunia teknologi, khususnya <strong>Artificial Intelligence (AI)</strong> dan <strong>Data Science</strong>. Bagi saya, data bukan sekadar angka, melainkan cerita yang menunggu untuk diungkap, dan AI adalah kunci untuk membuka wawasan baru dari cerita tersebut.
-                            </p>
-                            <p>
-                                Sebagai mahasiswi informatika, saya menikmati proses mengubah data mentah menjadi <em>insight</em> yang bermakna, membangun model <em>machine learning</em> yang cerdas, serta mengeksplorasi bagaimana teknologi AI dapat menyelesaikan masalah nyata di sekitar kita. Dari analisis statistik, visualisasi data interaktif, hingga pengembangan model prediktif, semuanya adalah bagian dari perjalanan belajar yang saya nikmati.
-                            </p>
-                            <p>
-                                Saya percaya bahwa AI dan Data Science bukan hanya tentang teknologi, tetapi tentang <strong>menciptakan dampak nyata</strong>. Itulah yang memotivasi saya untuk terus belajar, bereksperimen, dan berkembang di bidang yang dinamis ini.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Details Metadata -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-maroon-200/50 dark:border-maroon-900/40">
-                        <div>
-                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider">Domisili</span>
-                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1 mt-0.5">
-                                <i class="fa-solid fa-location-dot text-maroon-700 dark:text-maroon-400 text-xs"></i> Temanggung, Jawa Tengah
-                            </span>
-                        </div>
-                        <div>
-                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider">Universitas</span>
-                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1.5 mt-0.5">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_Telkom_University_potrait.png/120px-Logo_Telkom_University_potrait.png" 
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" 
-                                     alt="Logo Telkom" 
-                                     class="w-4 h-4 object-contain inline-block">
-                                <i class="fa-solid fa-graduation-cap text-maroon-700 dark:text-maroon-400 text-xs hidden"></i>
-                                Telkom Univ Purwokerto
-                            </span>
-                        </div>
-                        <div>
-                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider">Ketersediaan</span>
-                            <span class="font-semibold text-sm text-slate-800 dark:text-cream-100 flex items-center gap-1 mt-0.5">
-                                <i class="fa-solid fa-briefcase text-emerald-600 text-xs"></i> Magang & Open to Work
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Stats & Things I Love -->
-                <div class="lg:col-span-5 flex flex-col gap-6">
-                    <!-- Quick Stat Cards -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="glass-card p-6 rounded-2xl text-center">
-                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">2+</span>
-                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Proyek Unggulan</span>
-                            <span class="text-[10px] text-slate-400">AI, Fuzzy & Web App</span>
-                        </div>
-                        <div class="glass-card p-6 rounded-2xl text-center">
-                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">1</span>
-                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Pengalaman Magang</span>
-                            <span class="text-[10px] text-slate-400">BPKPAD Temanggung</span>
-                        </div>
-                        <div class="glass-card p-6 rounded-2xl text-center">
-                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">4+</span>
-                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Kepanitiaan & Organisasi</span>
-                            <span class="text-[10px] text-slate-400">MC, PR, Moderator, Event</span>
-                        </div>
-                        <div class="glass-card p-6 rounded-2xl text-center">
-                            <span class="text-3xl font-serif font-bold text-maroon-800 dark:text-maroon-400">1</span>
-                            <span class="block text-xs font-semibold text-slate-700 dark:text-cream-200 mt-1">Prestasi Nasional</span>
-                            <span class="text-[10px] text-slate-400">Finalist VERTEX 2026</span>
-                        </div>
-                    </div>
-
-                    <!-- Things I Love / Hobbies -->
-                    <div class="glass-card p-6 rounded-2xl flex-1 flex flex-col justify-center">
-                        <h4 class="font-serif font-bold text-base text-maroon-900 dark:text-cream-100 mb-3 flex items-center gap-2">
-                            <span>✨</span> Hobi & Minat Pribadi
-                        </h4>
-                        <div class="flex flex-wrap gap-2.5">
-                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
-                                <i class="fa-solid fa-microphone-lines text-rose-500"></i> Menyanyi
-                            </span>
-                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
-                                <i class="fa-solid fa-guitar text-amber-600"></i> Bermain Musik
-                            </span>
-                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
-                                <i class="fa-solid fa-book-open-reader text-maroon-700"></i> Belajar Hal Baru
-                            </span>
-                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
-                                <i class="fa-solid fa-chart-pie text-emerald-600"></i> Eksplorasi Data
-                            </span>
-                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-maroon-100 dark:bg-maroon-950 text-maroon-800 dark:text-maroon-300 flex items-center gap-1.5">
-                                <i class="fa-solid fa-mug-hot text-amber-700"></i> Coffee & Tech Chats
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ================= SKILLS ================= -->
     <section id="skills" class="py-20">
